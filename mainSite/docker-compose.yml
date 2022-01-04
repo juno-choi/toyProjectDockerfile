@@ -1,0 +1,18 @@
+version: '3.7'
+  
+services:
+    nginx:
+        container_name: nginx
+        image: "ililil9482/main_nginx:0.0.1" #수정된 이미지
+        ports:
+            - 80:80
+        depends_on:
+            - express
+    express:
+        image: "ililil9482/main_node:latest"
+        container_name: express
+        user: root
+        expose:
+            - 3000
+        volumes:
+            - /volumes:/volumes
