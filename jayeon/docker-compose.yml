@@ -1,0 +1,17 @@
+version: '3.7'
+#version1
+  
+services:
+    jayeon-nginx:
+        container_name : jayeon-nginx
+        image: "ililil9482/jayeon-nginx"
+        ports:
+            - 80:80
+    jayeon-front:
+        build: .
+        container_name: jayeon-front
+        user: root
+        expose: 
+            - 3000
+        volumes:
+            - /volumes:/volumes

@@ -1,0 +1,9 @@
+version: '3.7'
+  
+services:
+    jayeon-api:
+        build: .
+        container_name: jayeon-api
+        user: root
+        ports:
+            - 8001:8080
