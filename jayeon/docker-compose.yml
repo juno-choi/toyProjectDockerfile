@@ -1,12 +1,14 @@
 version: '3.7'
-#version1
   
 services:
     jayeon-nginx:
         container_name : jayeon-nginx
-        image: "ililil9482/jayeon-nginx"
+        build:
+            context: /compose/jayeon
+            dockerfile: DockerfileNginx
         ports:
             - 80:80
+        user: root
     jayeon-front:
         build: .
         container_name: jayeon-front
